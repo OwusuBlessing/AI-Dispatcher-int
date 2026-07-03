@@ -15,7 +15,7 @@ Two LLM stages build a profile with confidence and quotes. Locations use `City, 
 
 ## Incomplete rows
 
-Incomplete loads (missing price or destination) stay in the audit trail but are marked ineligible and excluded from the top 3, because effective $/mi cannot be computed. The pipeline never fails on incomplete rows. Audit table, Part A profile, and top 3: `src/outputs/submission.md`.
+Incomplete loads (missing price or destination) stay in the audit trail but are marked ineligible and excluded from the top 3, because effective $/mi cannot be computed. The pipeline never fails on incomplete rows. Audit table, Part A profile, and top 3: [src/outputs/submission.md](src/outputs/submission.md).
 
 ## Assumptions
 
