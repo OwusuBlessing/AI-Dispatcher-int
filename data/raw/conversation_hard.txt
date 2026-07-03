@@ -1,0 +1,16 @@
+Dispatcher: This is Sarah from Midwest Freight, calling about your truck status.
+Driver: Yeah hey — I'm kind of all over the place this week. I was home in Albuquerque last weekend but I'm not there now.
+Dispatcher: Where are you today?
+Driver: Well, my phone says Phoenix but honestly I'm closer to that Buckeye area west of town, sitting at a loves.
+Dispatcher: What equipment did you say you have again? I have flatbed on file but you hauled van freight last month.
+Driver: Right, mostly open deck — 48 foot flatbed, can strap down almost anything. I don't really run reefer. Sometimes I'll take a dry load if the money's right but that's not my main thing.
+Dispatcher: Weight?
+Driver: Uh, haven't scaled lately. Standard legal weight, you know how it is.
+Dispatcher: Any idea on rate?
+Driver: I'm not doing cheap freight. Last guy offered a buck sixty and I laughed. Two dollars is kind of my line in the sand, maybe a hair under if it's a short hop home.
+Dispatcher: Home being Albuquerque?
+Driver: Yeah that's where I'm based out of. I try to work Texas and the southwest. I won't go up to the northeast — no way. Chicago's hit or miss, depends.
+Dispatcher: When can you roll?
+Driver: I could grab something tomorrow afternoon, but Thursday I'm booked for a PM pickup. So like... four days a week usually, sometimes five if the rates make sense.
+Dispatcher: Brokers okay?
+Driver: Only if they factor quick pay. I had a bad experience with one that stiffed me — won't run with them again but generally I'm flexible if the paperwork's clean.

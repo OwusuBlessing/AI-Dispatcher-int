@@ -1,0 +1,37 @@
+# Canonical equipment types and accepted spreadsheet / spoken aliases.
+# Keys are canonical values used in rules and matching.
+
+canonical_aliases:
+  van:
+    - van
+    - dry van
+    - dry
+  hotshot:
+    - hotshot
+    - hot shot
+  gooseneck:
+    - gooseneck
+    - goose neck
+  flatbed:
+    - flatbed
+    - flat bed
+    - open deck
+  reefer:
+    - reefer
+    - refrigerated
+
+# Which load trailer types each driver equipment type can haul.
+# If a driver type is omitted, it only matches the same canonical type.
+compatibility:
+  hotshot:
+    - hotshot
+    - gooseneck
+  gooseneck:
+    - hotshot
+    - gooseneck
+  van:
+    - van
+  flatbed:
+    - flatbed
+  reefer:
+    - reefer

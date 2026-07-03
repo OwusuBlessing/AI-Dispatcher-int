@@ -1,0 +1,23 @@
+# Business rule configuration — populated during implementation
+
+missing_data:
+  enabled: true
+  reject_if_missing:
+    - destination
+    - price
+
+equipment:
+  enabled: true
+
+weight:
+  enabled: true
+
+rate:
+  enabled: true
+  # When driver minimum_rate_per_mile is null, skip rate filtering entirely
+  skip_when_minimum_rate_null: true
+
+location:
+  enabled: true
+  # Only uses explicit no-go cities/regions from the driver profile
+  # (soft dislikes belong in soft_preferences and do not reject loads)

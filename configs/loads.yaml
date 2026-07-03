@@ -1,0 +1,73 @@
+# Excel ingest configuration — map spreadsheet headers to Load fields.
+# Add aliases here when a new file uses different column names.
+
+sheet_name: Loads
+
+# Logical field -> accepted header labels (case-insensitive match on first row)
+columns:
+  load_id:
+    - Load ID
+    - load_id
+    - ID
+  origin_city:
+    - Origin
+    - origin_city
+    - Origin City
+  origin_state:
+    - Origin State
+    - origin_state
+  origin_latitude:
+    - Origin Lat
+    - origin_lat
+    - origin_latitude
+  origin_longitude:
+    - Origin Lon
+    - origin_lon
+    - origin_longitude
+  destination_city:
+    - Destination
+    - destination_city
+    - Destination City
+    - Dest City
+  destination_state:
+    - Destination State
+    - Dest State
+    - destination_state
+  destination_latitude:
+    - Dest Lat
+    - destination_lat
+    - destination_latitude
+  destination_longitude:
+    - Dest Lon
+    - destination_lon
+    - destination_longitude
+  trailer:
+    - Trailer
+    - trailer
+    - Equipment
+  weight:
+    - Weight
+    - weight
+  price:
+    - Price ($)
+    - Price
+    - price
+  loaded_miles:
+    - Loaded Miles
+    - loaded_miles
+    - Miles
+
+# Cell values treated as missing (case-insensitive)
+missing_values:
+  - MISSING
+  - missing
+  - N/A
+  - NA
+  - ""
+
+# Column used to detect end-of-data (first column must be non-missing)
+id_field: load_id
+
+normalization:
+  title_case_cities: true
+  parse_city_state_from_location: true
