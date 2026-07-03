@@ -11,8 +11,10 @@ dist/
 
 build/
 .DS_Store
+project.md
 src/outputs/*
 !src/outputs/.gitkeep
+!src/outputs/submission.md
 data/processed/*
 !data/processed/.gitkeep
 data/cache/*

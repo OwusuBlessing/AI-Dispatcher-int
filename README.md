@@ -11,19 +11,19 @@ loads.xlsx       → Load Normalizer  → Rule Engine      → Distance & Rate �
 
 ## Profile extraction
 
-Two LLM stages organize the transcript into evidence, then build a profile with confidence and quotes. Locations use `City, ST` + Nominatim geocoding (never LLM coordinates). Post-processing canonicalizes equipment and clears unstated fields.
+Two LLM stages build a profile with confidence and quotes. Locations use `City, ST` + Nominatim (never LLM coordinates). Post-processing canonicalizes equipment and clears unstated fields.
 
 ## Incomplete rows
 
-Config-driven Excel mapping (`configs/loads.yaml`). Blank rows are skipped; rows missing destination or price are still audited and rejected with a recorded reason.
+Incomplete loads (missing price or destination) stay in the audit trail but are marked ineligible and excluded from the top 3, because effective $/mi cannot be computed. The pipeline never fails on incomplete rows. Audit table, Part A profile, and top 3: `src/outputs/submission.md`.
 
 ## Assumptions
 
-Trailer, weight, missing-data, and min-rate rules run in Python. Null `minimum_rate_per_mile` or `weight_capacity` skips that filter. Effective rate = price ÷ total trip miles (Haversine).
+Trailer, weight, missing-data, and min-rate rules run in Python. Null min rate or weight capacity skips that filter. Effective rate = price ÷ total trip miles (Haversine).
 
 ## Rejected high-paying load
 
-**L05** (Waco → San Antonio, $640) has an effective rate of **$2.514/mi** — above the driver's $2/mi floor — but requires **flatbed**. This driver runs **hotshot/gooseneck** only, so it fails the equipment rule and is excluded before ranking.
+**L05** (Waco → San Antonio, $640) is **$2.514/mi** — above the $2/mi floor — but requires **flatbed**. Driver runs **hotshot/gooseneck** only, so equipment fails before ranking.
 
 ## Run
 
@@ -33,4 +33,4 @@ cp .env.example .env
 python scripts/create_submission.py
 ```
 
-Agent models are configured in `configs/agent_llm_config.py`.
+Agent models: `configs/agent_llm_config.py`.
