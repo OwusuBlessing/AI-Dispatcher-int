@@ -135,7 +135,7 @@ class GeocoderService:
             required,
             latitude_field_name,
             FieldValue(
-                value=resolved.lat,
+                value=round(resolved.lat, 4),
                 confidence=location_field.confidence,
                 evidence=location_field.evidence,
                 reasoning_notes=coordinate_notes,
@@ -145,7 +145,7 @@ class GeocoderService:
             required,
             longitude_field_name,
             FieldValue(
-                value=resolved.lon,
+                value=round(resolved.lon, 4),
                 confidence=location_field.confidence,
                 evidence=location_field.evidence,
                 reasoning_notes=coordinate_notes,

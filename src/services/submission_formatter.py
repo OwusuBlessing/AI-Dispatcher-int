@@ -20,11 +20,22 @@ _PROFILE_ROWS: tuple[tuple[str, str], ...] = (
     ("Weight Capacity (lbs)", "weight_capacity"),
 )
 
+_COORDINATE_FIELDS = frozenset(
+    {
+        "current_latitude",
+        "current_longitude",
+        "home_latitude",
+        "home_longitude",
+    }
+)
 
-def _format_field_value(value: Any) -> str:
+
+def _format_field_value(value: Any, *, attr: str | None = None) -> str:
     if value is None:
         return "—"
     if isinstance(value, float):
+        if attr in _COORDINATE_FIELDS:
+            return f"{value:.4f}"
         if value == int(value):
             return f"{int(value):,}"
         return f"{value:,.2f}"
@@ -36,17 +47,19 @@ def _format_field_value(value: Any) -> str:
 def _field_row(
     label: str,
     field: FieldValue[Any] | None,
+    *,
+    attr: str | None = None,
 ) -> tuple[str, str, str]:
     if field is None or field.value is None:
         return label, "—", "—"
-    return label, _format_field_value(field.value), f"{field.confidence:.2f}"
+    return label, _format_field_value(field.value, attr=attr), f"{field.confidence:.2f}"
 
 
 def format_profile_table(driver: ResolvedDriverProfile) -> str:
     """Render Part A driver profile as a markdown table."""
     required = driver.profile.required_fields
     rows = [
-        _field_row(label, getattr(required, attr))
+        _field_row(label, getattr(required, attr), attr=attr)
         for label, attr in _PROFILE_ROWS
     ]
 

@@ -36,6 +36,10 @@ def test_format_profile_table_renders_part_a_fields():
         profile=DriverProfile(
             required_fields=DriverRequiredFields(
                 current_location=FieldValue(value="Dallas, TX", confidence=0.98),
+                current_latitude=FieldValue(value=32.7762719, confidence=0.98),
+                current_longitude=FieldValue(value=-96.7968559, confidence=0.98),
+                home_latitude=FieldValue(value=29.4246002, confidence=0.97),
+                home_longitude=FieldValue(value=-98.4951405, confidence=0.97),
                 minimum_rate_per_mile=FieldValue(value=2.0, confidence=1.0),
                 equipment_types=FieldValue(
                     value=["hotshot", "gooseneck"],
@@ -49,6 +53,10 @@ def test_format_profile_table_renders_part_a_fields():
     table = format_profile_table(driver)
 
     assert "| Current Location | Dallas, TX | 0.98 |" in table
+    assert "| Current Latitude | 32.7763 | 0.98 |" in table
+    assert "| Current Longitude | -96.7969 | 0.98 |" in table
+    assert "| Home Latitude | 29.4246 | 0.97 |" in table
+    assert "| Home Longitude | -98.4951 | 0.97 |" in table
     assert "| Minimum Rate ($/mi) | 2 | 1.00 |" in table
     assert "| Canonical Equipment | hotshot, gooseneck | — |" in table
 

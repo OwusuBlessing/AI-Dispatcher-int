@@ -5,11 +5,11 @@
 | Field | Value | Confidence |
 | --- | --- | --- |
 | Current Location | Dallas, TX | 1.00 |
-| Current Latitude | 32.78 | 1.00 |
-| Current Longitude | -96.80 | 1.00 |
+| Current Latitude | 32.7763 | 1.00 |
+| Current Longitude | -96.7969 | 1.00 |
 | Home Base | San Antonio, TX | 0.97 |
-| Home Latitude | 29.42 | 0.97 |
-| Home Longitude | -98.50 | 0.97 |
+| Home Latitude | 29.4246 | 0.97 |
+| Home Longitude | -98.4951 | 0.97 |
 | Minimum Rate ($/mi) | 2 | 1.00 |
 | Equipment Types | hotshot, gooseneck | 1.00 |
 | Weight Capacity (lbs) | — | — |
