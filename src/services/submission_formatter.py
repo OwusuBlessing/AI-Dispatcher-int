@@ -193,7 +193,7 @@ Trailer, weight, missing-data, and min-rate rules run in Python. Null min rate o
 
 ## Rejected high-paying load
 
-**L05** (Waco → San Antonio, $640) is **$2.514/mi** — above the $2/mi floor — but requires **flatbed**. Driver runs **hotshot/gooseneck** only, so equipment fails before ranking.
+**L04** (Plano → Memphis, $1,500) is the highest-priced rejected load but requires **van**. Driver runs **hotshot/gooseneck** only, so equipment fails before ranking.
 
 ## Run
 
